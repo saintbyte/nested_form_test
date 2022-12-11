@@ -1,0 +1,10 @@
+<h1>New cardealership</h1>
+
+<form action="{% url 'cardealership-create' %}" method="POST">
+{% csrf_token %}
+<table>
+{{ form }}
+</table>
+<input type="submit" value="Save" />
+
+</form>

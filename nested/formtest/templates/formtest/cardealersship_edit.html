@@ -1,0 +1,21 @@
+
+
+<h1>Edit cardealership</h1>
+<form action="{% url 'cardealership-edit' pk=object.id %}" method="POST">
+{% csrf_token %}
+<table>
+    ---
+{{ form.management_form.as_p }}
+   ---
+{% for cars_form in form %}
+
+    {{ cars_form.as_p }}
+    {{ cars_form.nested.management_form }}
+    {% for spec in cars_form.nested %}
+        {{ spec.as_p }}
+    {% endfor %}
+{% endfor %}
+</table>
+<input type="submit" value="Save" />
+
+</form>

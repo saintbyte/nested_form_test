@@ -1,0 +1,11 @@
+<h1>Cardealership</h1>
+
+<ul>
+{% for dealership in object_list %}
+  <li>
+    <a href="{% url 'cardealership-edit' pk=dealership.id %}">{{ dealership.name }}</a>
+  </li>
+{% endfor %}
+</ul>
+<br />
+<a href="{% url 'cardealership-create' %}">new cardealership</a>
