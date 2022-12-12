@@ -1,0 +1,17 @@
+{{ form }}
+{% for cars_form in form.inline %}
+    <blockquote>
+    <h2>Cars</h2>
+    {{ cars_form.as_p }}
+    {{ cars_form.nested.management_form }}
+    {% for spec in cars_form.nested %}
+    <blockquote>
+        <h3>Specification</h3>
+        {{ spec.as_p }}
+    </blockquote>
+    {% endfor %}
+    </blockquote>
+{% endfor %}
+<p>
+<input type="submit" value="Save" />
+</p>
